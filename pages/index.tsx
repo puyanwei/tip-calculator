@@ -10,6 +10,8 @@ const Home: NextPage = () => {
       <h1 className="text-3xl font-bold text-gray-cyan-500">Dark Grayish Cyan</h1>
       <h1 className="text-3xl font-bold text-dark-cyan">Very Dark Cyan</h1>
       <h1 className="text-3xl font-bold text-cyan">Cyan</h1>
+      <h1 className="text-3xl font-bold lg:invisible text-cyan sm:visible">Mobile view</h1>
+      <h1 className="text-3xl font-bold sm:invisible text-cyan lg:visible">Desktop view</h1>
     </div>
   )
 }
