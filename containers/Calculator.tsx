@@ -13,7 +13,7 @@ export function Calculator() {
     <div className="bg-white rounded-t-xl flex flex-col gap-4 p-8 text-xl">
       <div className="flex flex-col">
         <Label>Bill</Label>
-        <InputBox placeholder="0" type="number" />
+        <InputBox placeholder="0" type="number" icon="dollar" />
       </div>
 
       <div>
@@ -30,7 +30,7 @@ export function Calculator() {
 
       <div className="flex flex-col">
         <Label>Number of People</Label>
-        <InputBox type="number" placeholder="0" />
+        <InputBox type="number" placeholder="0" icon="people" />
       </div>
 
       <TippingSummary />
