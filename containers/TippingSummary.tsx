@@ -1,8 +1,14 @@
+import { Button } from "../components/Button"
+
 export function TippingSummary() {
   const totalPerPerson = 0
   const totalAmount = 0
+
+  function handleResetClick() {
+    console.log("handleResetClick")
+  }
   return (
-    <div className="border-black border-2 rounded-xl p-4">
+    <div className=" rounded-xl p-4 bg-dark-cyan text-white">
       <div>
         <div>
           <div>Tip Amount</div>
@@ -20,7 +26,9 @@ export function TippingSummary() {
         </div>
       </div>
 
-      <button>RESET</button>
+      <Button onClick={handleResetClick} theme="light">
+        RESET
+      </Button>
     </div>
   )
 }
