@@ -1,4 +1,5 @@
 import { Button } from "../components/Button"
+import { InputBox } from "../components/InputBox"
 import { TippingSummary } from "./TippingSummary"
 
 export function Calculator() {
@@ -11,7 +12,7 @@ export function Calculator() {
     <div className="bg-white rounded-t-xl flex flex-col gap-4 p-4">
       <div>
         <label>Bill</label>
-        <input type="number" />
+        <InputBox placeholder="0" type="number" />
       </div>
 
       <div>
@@ -22,13 +23,13 @@ export function Calculator() {
               {tipPercentage}
             </Button>
           ))}
-          <input type="number" placeholder="Custom" />
+          <InputBox type="number" placeholder="Custom" />
         </div>
       </div>
 
       <div>
         <label>Number of People</label>
-        <input type="number" placeholder="Custom" />
+        <InputBox type="number" placeholder="0" />
       </div>
 
       <TippingSummary />
