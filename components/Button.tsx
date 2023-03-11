@@ -1,6 +1,8 @@
+import { MouseEvent } from "react"
+
 interface ButtonProps {
   children: string
-  onClick: () => void
+  onClick: (e: MouseEvent<HTMLButtonElement>) => void
   theme?: ButtonTheme
 }
 type ButtonTheme = keyof typeof themeMap
