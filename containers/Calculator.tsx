@@ -8,7 +8,6 @@ export function Calculator() {
   const [tipPercentageChoice, setTipPercentageChoice] = useState(0)
   const [billAmount, setBillAmount] = useState(0)
   const [numberOfPeople, setNumberOfPeople] = useState(0)
-  const [active, setActive] = useState(false)
   const tipPercentages = ["5%", "10%", "15%", "25%", "50%"]
 
   function handleBillAmount(e: ChangeEvent<HTMLInputElement>) {
@@ -31,18 +30,19 @@ export function Calculator() {
     setNumberOfPeople(e.target.valueAsNumber)
   }
 
+  function handleReset() {
+    setTipPercentageChoice(0)
+    setBillAmount(0)
+    setNumberOfPeople(0)
+  }
+
   console.log({ tipPercentageChoice, billAmount, numberOfPeople })
 
   return (
     <div className="bg-white rounded-t-xl flex flex-col gap-4 p-8 text-xl">
       <div className="flex flex-col">
         <Label>Bill</Label>
-        <InputBox
-          type="number"
-          icon="dollar"
-          value={billAmount}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => handleBillAmount}
-        />
+        <InputBox type="number" icon="dollar" value={billAmount} onChange={handleBillAmount} />
       </div>
 
       <div>
@@ -78,7 +78,12 @@ export function Calculator() {
         />
       </div>
 
-      <TippingSummary />
+      <TippingSummary
+        tipPercentage={tipPercentageChoice}
+        billAmount={billAmount}
+        numberOfPeople={numberOfPeople}
+        handleReset={handleReset}
+      />
     </div>
   )
 }
