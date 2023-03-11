@@ -11,7 +11,6 @@ export function Calculator() {
   const tipPercentages = ["5%", "10%", "15%", "25%", "50%"]
 
   function handleBillAmount(e: ChangeEvent<HTMLInputElement>) {
-    console.log(e.target.valueAsNumber)
     setBillAmount(e.target.valueAsNumber)
   }
 
@@ -35,8 +34,6 @@ export function Calculator() {
     setBillAmount(0)
     setNumberOfPeople(0)
   }
-
-  console.log({ tipPercentageChoice, billAmount, numberOfPeople })
 
   return (
     <div className="bg-white rounded-t-xl flex flex-col gap-4 p-8 text-xl">

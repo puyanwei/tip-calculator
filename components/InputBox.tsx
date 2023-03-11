@@ -44,6 +44,7 @@ export function InputBox({
         onChange={onChange}
         min={min}
         step={step}
+        onFocus={(e) => e.target.select()}
       />
       {icon && <span className="absolute bottom-4 left-5">{iconMap[icon]}</span>}
     </div>
