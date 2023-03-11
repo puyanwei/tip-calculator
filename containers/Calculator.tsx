@@ -24,7 +24,7 @@ export function Calculator() {
               {tipPercentage}
             </Button>
           ))}
-          <InputBox type="number" placeholder="Custom" />
+          <InputBox className="bg-white" type="number" placeholder="Custom" />
         </div>
       </div>
 
