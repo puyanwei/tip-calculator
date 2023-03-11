@@ -1,4 +1,4 @@
-export function TipCalculatorSummary() {
+export function TippingSummary() {
   const totalPerPerson = 0
   const totalAmount = 0
   return (

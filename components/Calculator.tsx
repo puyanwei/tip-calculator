@@ -1,8 +1,8 @@
-import { TipCalculatorSummary } from "./TipCalculatorSummary"
+import { TippingSummary } from "./TippingSummary"
 
-export function TipCalculator() {
+export function Calculator() {
   return (
-    <div>
+    <div className="bg-white rounded-t-xl flex flex-col gap-4 p-4">
       <div>
         <label>Bill</label>
         <input type="number" />
@@ -23,7 +23,7 @@ export function TipCalculator() {
         <input type="number" placeholder="Custom" />
       </div>
 
-      <TipCalculatorSummary />
+      <TippingSummary />
     </div>
   )
 }

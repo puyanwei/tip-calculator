@@ -1,11 +1,11 @@
 import type { NextPage } from "next"
-import { TipCalculator } from "../components/TipCalculator"
+import { Calculator } from "../components/Calculator"
 
 const Home: NextPage = () => {
   return (
-    <div className="p-4">
+    <div className="bg-gray-cyan-100 text-dark-cyan">
       <h1>Splitter Title</h1>
-      <TipCalculator />
+      <Calculator />
     </div>
   )
 }
