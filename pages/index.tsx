@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import Image from "next/image"
-import { Calculator } from "../components/Calculator"
+import { Calculator } from "../containers/Calculator"
 
 const Home: NextPage = () => {
   return (

@@ -2,7 +2,7 @@ export function TippingSummary() {
   const totalPerPerson = 0
   const totalAmount = 0
   return (
-    <div>
+    <div className="border-black border-2 rounded-xl p-4">
       <div>
         <div>
           <div>Tip Amount</div>
