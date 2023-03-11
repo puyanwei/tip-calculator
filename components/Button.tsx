@@ -4,6 +4,7 @@ interface ButtonProps {
   children: string
   onClick: (e: MouseEvent<HTMLButtonElement>) => void
   theme?: ButtonTheme
+  active?: boolean
 }
 type ButtonTheme = keyof typeof themeMap
 
@@ -12,8 +13,8 @@ const themeMap = {
   light: "bg-cyan hover:bg-gray-cyan-100 hover:text-light-gray text-dark-cyan",
 } as const
 
-export function Button({ children, onClick, theme = "dark" }: ButtonProps) {
-  const buttonTheme = themeMap[theme]
+export function Button({ children, onClick, theme = "dark", active = false }: ButtonProps) {
+  const buttonTheme = active ? themeMap["light"] : themeMap[theme]
   return (
     <button className={`${buttonTheme} font-bold py-2 px-4 rounded w-full`} onClick={onClick}>
       {children}
