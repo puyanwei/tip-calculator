@@ -9,7 +9,7 @@ const spaceMono = Space_Mono({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className={spaceMono.className}>
+    <main className={`${spaceMono.className} bg-gray-cyan-100`}>
       <Component {...pageProps} />
     </main>
   )

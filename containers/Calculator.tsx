@@ -36,43 +36,45 @@ export function Calculator() {
   }
 
   return (
-    <div className="bg-white rounded-t-xl flex flex-col gap-4 p-8 text-xl">
-      <div className="flex flex-col">
-        <Label>Bill</Label>
-        <InputBox type="number" icon="dollar" value={billAmount} onChange={handleBillAmount} />
-      </div>
-
+    <div className="bg-white rounded-xl flex flex-col gap-4 lg:gap-8 p-8 text-xl lg:grid lg:grid-cols-2 lg:max-w-5xl lg:mx-auto lg:mt-16">
       <div>
-        <Label>Select Tip %</Label>
-        <div className="grid grid-cols-2 gap-4 mt-2">
-          {tipPercentages.map((tipPercentage) => (
-            <Button
-              onClick={handleTipPercentage}
-              key={tipPercentage}
-              active={`${tipPercentageChoice}%` === tipPercentage}
-            >
-              {tipPercentage}
-            </Button>
-          ))}
+        <div className="flex flex-col">
+          <Label>Bill</Label>
+          <InputBox type="number" icon="dollar" value={billAmount} onChange={handleBillAmount} />
+        </div>
+
+        <>
+          <Label>Select Tip %</Label>
+          <div className="grid grid-cols-2 gap-4 mt-2">
+            {tipPercentages.map((tipPercentage) => (
+              <Button
+                onClick={handleTipPercentage}
+                key={tipPercentage}
+                active={`${tipPercentageChoice}%` === tipPercentage}
+              >
+                {tipPercentage}
+              </Button>
+            ))}
+            <InputBox
+              className="bg-white"
+              type="number"
+              placeholder="Custom"
+              onChange={handleCustomTipPercentage}
+            />
+          </div>
+        </>
+
+        <div className="flex flex-col">
+          <Label>Number of People</Label>
           <InputBox
-            className="bg-white"
             type="number"
-            placeholder="Custom"
-            onChange={handleCustomTipPercentage}
+            icon="people"
+            value={numberOfPeople}
+            onChange={handleNumberOfPeople}
+            min={1}
+            step={1}
           />
         </div>
-      </div>
-
-      <div className="flex flex-col">
-        <Label>Number of People</Label>
-        <InputBox
-          type="number"
-          icon="people"
-          value={numberOfPeople}
-          onChange={handleNumberOfPeople}
-          min={1}
-          step={1}
-        />
       </div>
 
       <TippingSummary

@@ -1,6 +1,7 @@
 import { Button } from "../components/Button"
 
 interface TippingSummary {
+  className?: string
   billAmount: number
   numberOfPeople: number
   tipPercentage: number
@@ -8,6 +9,7 @@ interface TippingSummary {
 }
 
 export function TippingSummary({
+  className,
   billAmount,
   numberOfPeople,
   tipPercentage,
@@ -22,7 +24,7 @@ export function TippingSummary({
     resolvedTotalSplit === Infinity || isNaN(resolvedTotalSplit) ? 0 : resolvedTotalSplit
 
   return (
-    <div className="rounded-xl p-6 bg-dark-cyan text-white my-2">
+    <div className={`rounded-xl p-6 bg-dark-cyan text-white my-2 lg:flex lg:flex-col ${className}`}>
       <div className="grid grid-cols-2">
         <div className="my-4">
           <div className="text-base font-semibold">Tip Amount</div>
@@ -39,7 +41,7 @@ export function TippingSummary({
           <div className="text-right text-3xl my-4 text-cyan">${totalSplit.toFixed(2)}</div>
         </div>
       </div>
-
+      <div className="lg:flex lg:flex-grow" />
       <Button onClick={handleReset} theme="light">
         RESET
       </Button>

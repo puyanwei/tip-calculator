@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     screens: {
       sm: "375px",
-      lg: "1440px",
+      lg: "1080px",
     },
     extend: {
       colors: {
